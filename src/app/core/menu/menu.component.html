@@ -1,0 +1,11 @@
+
+<nav>
+    <ul>
+        <li><img width='30' height='30' src='./assets/obi-wan.png' title='obi-wan'></li>
+        <li *ngFor='let mi of menuItems' title='{{mi.tooltip}}'>
+            <a routerLink='{{mi.href}}'>{{mi.display}}</a> 
+        </li>
+           <span style="float: right; padding-right: 30px; font-style:italic; font-weight: bold">Hello, {{loggedInUser.firstName}} <img width='30' height='30' src='./assets/stormtrooper.png' title='Trooper'></span>
+
+    </ul>
+</nav>

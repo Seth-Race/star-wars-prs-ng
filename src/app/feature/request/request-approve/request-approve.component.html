@@ -1,0 +1,49 @@
+<app-menu></app-menu>
+<section class="heading">
+    <span class="page-title font-weight-bold font-style-italic">{{title}}</span>
+</section>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>User</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{request.user.firstName}}{{request.user.lastName}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total}}</td>
+    </tr>
+    </tbody>
+</table>
+<section class="heading">
+    <span class="page-title font-weight-bold font-style-italic">[Line Items]</span>
+</section> 
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Line Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor='let lineItem of lineItems'>
+        <td>{{lineItem.id}}</td>
+        <td>{{lineItem.product.name}}</td>
+        <td>{{lineItem.quantity}}</td>
+        <td>{{lineItem.product.price}}</td>
+        <td>{{lineItem.request.total}}</td>
+    </tr>
+    </tbody>
+</table>
+<span><button (click)="approve()" class="btn btn-sm btn-primary">Approve</button>
+    <input [(ngModel)]="request.reasonForRejection" class="rounded" type="text">
+    <button *ngIf="request.reasonForRejection!=null && request.reasonForRejection.length>0" (click)="reject()" class="btn btn-sm btn-danger">Reject</button>
+    </span>

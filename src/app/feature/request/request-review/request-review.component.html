@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<section class="heading">
+    <span class="page-title font-weight-bold font-italic">{{title}}</span>
+</section>
+<table class="table table-sm">
+    <thead>
+    <tr>
+        <th>User</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>Submitted Date</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor='let request of requests'>
+        <td>{{request.user.firstName}} {{request.user.lastName}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total}}</td>
+        <td>{{request.submittedDate}}</td>
+        <td>
+            <a routerLink='/request-approve/{{request.id}}'>
+                <img width='20' height='20' src='assets/review.png' title='Approve/Reject'>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
