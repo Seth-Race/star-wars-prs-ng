@@ -1,15 +1,11 @@
 <app-menu></app-menu>
 <div *ngIf="user" class="component">
     <section class="heading">
-        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span class="page-title font-weight-bold font-italic">| User Create </span>
         <span> | <a routerLink="/user-list">Return to List</a></span>
     </section>
     <main class="single">
         <table class="table table-sm">
-            <tr>
-                <td>ID</td>
-                <td>{{user.id}}</td>
-            </tr>
             <tr>
                 <td>Username:</td>
                 <td><input [(ngModel)]="user.username" class="rounded" type="text"></td>
@@ -27,11 +23,7 @@
                 <td><input [(ngModel)]="user.firstName" class="rounded" type="text"></td>
             </tr>
             <tr>
-                <td>Email:</td>
-                <td><input [(ngModel)]="user.email" class="rounded" type="text"></td>
-            </tr>
-            <tr>
-                <td>Phone:</td>
+                <td>Holonet Number:</td>
                 <td><input [(ngModel)]="user.phone" class="rounded" type="text"></td>
             </tr>
             <tr>
