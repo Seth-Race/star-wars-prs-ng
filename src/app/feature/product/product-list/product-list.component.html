@@ -7,9 +7,8 @@
 <table class="table table-sm">
     <thead>
     <tr>
-        <th>Id</th>
-        <th>Vendor</th>
-        <th>Part Number</th>
+        <th>Planet of Origin</th>
+        <th>Item Number</th>
         <th>Name</th>
         <th>Price</th>
         <th>Unit</th>
@@ -18,7 +17,6 @@
     </thead>
     <tbody>
     <tr *ngFor='let product of products'>
-        <td>{{product.id}}</td>
         <td>{{product.vendor.name}}</td>
         <td>{{product.partNumber}}</td>
         <td>{{product.name}}</td>
@@ -26,7 +24,7 @@
         <td>{{product.unit}}</td>
         <td>
             <a routerLink='/product-detail/{{product.id}}'>
-                <img width='20' height='20' src='assets/delete.png' title='Product Details'>
+                <img width='20' height='20' src='assets/details.png' title='Product Details'>
             </a> | 
             <a routerLink='/product-edit/{{product.id}}'>
                 <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Product'>
